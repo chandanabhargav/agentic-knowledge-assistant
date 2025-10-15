@@ -48,7 +48,6 @@ frontend/.env.*.local
 
 # --- Data / uploads / vector index ---
 data/
-uploads/
 app/data/
 backend/data/
 backend/uploads/
