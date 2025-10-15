@@ -1,0 +1,7 @@
+.git
+node_modules
+frontend/.next
+__pycache__
+index_store
+data
+.env

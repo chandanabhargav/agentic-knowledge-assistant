@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: rag-backend
+    env_file: .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./index_store:/app/index_store
+    command: uvicorn backend.app:app --host 0.0.0.0 --port 8000 --reload
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: rag-frontend
+    env_file: .env
+    environment:
+      - NEXT_PUBLIC_API_BASE=${NEXT_PUBLIC_API_BASE}
+      - NEXT_PUBLIC_BEARER_TOKEN=${NEXT_PUBLIC_BEARER_TOKEN}
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    command: npm run dev
