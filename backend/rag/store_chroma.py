@@ -2,7 +2,7 @@
 from pathlib import Path
 import chromadb
 from chromadb.config import Settings
-from backend.core.settings import settings
+from core.settings import settings
 
 # Ensure the directory exists (even if it's a mounted volume)
 Path(settings.INDEX_DIR).mkdir(parents=True, exist_ok=True)

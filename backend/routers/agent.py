@@ -1,8 +1,8 @@
 # backend/routers/agent.py
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel
-from backend.core.auth import bearer_auth
-from backend.agent.agent import run_agent
+from core.auth import bearer_auth
+from agent.agent import run_agent
 
 router = APIRouter(tags=["agent"])
 

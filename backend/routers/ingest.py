@@ -1,17 +1,17 @@
 from fastapi import APIRouter, UploadFile, File, Depends
 from pathlib import Path
-from backend.core.auth import bearer_auth
-from backend.core.models import IngestResponse
-from backend.core.settings import settings
-from backend.rag.retriever import ingest_pdf_dir, ingest_csv_file, ingest_docx_file, ingest_txt_file
-# from backend.rag.ingest_csv import ingest_csv_file
+from core.auth import bearer_auth
+from core.models import IngestResponse
+from core.settings import settings
+from rag.retriever import ingest_pdf_dir, ingest_csv_file, ingest_docx_file, ingest_txt_file
+# from rag.ingest_csv import ingest_csv_file
 from fastapi import Query
 from uuid import uuid4
 from datetime import datetime
-from backend.services import uploads_index
-from backend.rag.retriever import ingest_pdf_file
-from backend.rag.retriever import _sha1
-from backend.rag.retriever import _file_fingerprint
+from services import uploads_index
+from rag.retriever import ingest_pdf_file
+from rag.retriever import _sha1
+from rag.retriever import _file_fingerprint
 
 router = APIRouter(tags=["ingest"])
 
@@ -35,7 +35,7 @@ CSV_DIR.mkdir(parents=True, exist_ok=True)
 #     Quick OCR test to verify Poppler/Tesseract integration on a single PDF file path.
 #     Example: /api/debug/ocr?sample=./data/pdfs/scanned_notice.pdf
 #     """
-#     from backend.rag.ocr import smart_pdf_extract
+#     from rag.ocr import smart_pdf_extract
 #     from pathlib import Path as _P
 #     p = _P(sample)
 #     if not p.exists():
@@ -45,7 +45,7 @@ CSV_DIR.mkdir(parents=True, exist_ok=True)
 
 # @router.get("/debug/index")
 # def debug_index(_ok: bool = Depends(bearer_auth)):
-#     from backend.rag.store_chroma import get_collection
+#     from rag.store_chroma import get_collection
 #     col = get_collection()
 
 #     try:

@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends
-from backend.core.auth import bearer_auth
-from backend.core.models import ChatRequest, ChatResponse
-from backend.core.settings import settings
-from backend.rag.retriever import retrieve_topk
-from backend.rag.prompts import SYSTEM_PROMPT
-from backend.core.logging import log_interaction
+from core.auth import bearer_auth
+from core.models import ChatRequest, ChatResponse
+from core.settings import settings
+from rag.retriever import retrieve_topk
+from rag.prompts import SYSTEM_PROMPT
+from core.logging import log_interaction
 from openai import OpenAI
 
 router = APIRouter(tags=["chat"])
@@ -13,7 +13,7 @@ client = OpenAI(api_key=settings.OPENAI_API_KEY)
 
 # @router.get("/debug/search")
 # def debug_search(q: str, _ok: bool = Depends(bearer_auth)):
-#     from backend.rag.retriever import retrieve_topk
+#     from rag.retriever import retrieve_topk
 #     hits = retrieve_topk(q, top_k=5)
 #     for h in hits:
 #         if len(h["text"]) > 240:

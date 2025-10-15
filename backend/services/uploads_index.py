@@ -5,7 +5,7 @@ from typing import List, Dict, Any, Optional
 from datetime import datetime
 import json
 
-from backend.core.settings import settings
+from core.settings import settings
 
 DATA_DIR = Path(settings.DATA_DIR)
 INDEX_PATH = DATA_DIR / "uploads.json"

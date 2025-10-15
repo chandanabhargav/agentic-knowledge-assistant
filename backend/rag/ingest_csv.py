@@ -2,8 +2,8 @@ from pathlib import Path
 from typing import List, Dict, Any, Optional
 import csv
 
-from backend.rag.store_chroma import get_collection
-from backend.rag.embedder import embed_texts
+from rag.store_chroma import get_collection
+from rag.embedder import embed_texts
 
 # Accept multiple delimiters if Sniffer fails
 CANDIDATE_DELIMS = [',', ';', '\t', '|']

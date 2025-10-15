@@ -1,6 +1,6 @@
 import hashlib
 from typing import List, Dict
-from backend.core.settings import settings
+from core.settings import settings
 from openai import OpenAI
 
 _client = OpenAI(api_key=settings.OPENAI_API_KEY)

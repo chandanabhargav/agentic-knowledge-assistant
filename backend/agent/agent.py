@@ -1,8 +1,8 @@
 # backend/agent/agent.py
 from typing import Any, Dict, Callable
 from openai import OpenAI
-from backend.core.settings import settings
-from backend.agent.tools import retrieve_documents, check_policy
+from core.settings import settings
+from agent.tools import retrieve_documents, check_policy
 import json
 
 client = OpenAI(api_key=settings.OPENAI_API_KEY)

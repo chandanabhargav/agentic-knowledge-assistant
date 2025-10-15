@@ -1,9 +1,9 @@
 from pathlib import Path
 from typing import List, Dict, Any, Iterable
-from backend.rag.ocr import smart_pdf_extract
-from backend.rag.chunker import chunk_text
-from backend.rag.embedder import embed_texts
-from backend.rag.store_chroma import get_collection
+from rag.ocr import smart_pdf_extract
+from rag.chunker import chunk_text
+from rag.embedder import embed_texts
+from rag.store_chroma import get_collection
 from rapidfuzz import fuzz
 from datetime import datetime
 import csv, os, hashlib, re, numpy as np

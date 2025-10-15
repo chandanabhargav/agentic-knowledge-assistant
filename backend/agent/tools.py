@@ -1,9 +1,9 @@
 # backend/agent/tools.py
 from typing import List, Dict, Any
-from backend.rag.retriever import retrieve_topk
+from rag.retriever import retrieve_topk
 import csv
 from pathlib import Path
-from backend.core.settings import settings
+from core.settings import settings
 
 def retrieve_documents(query: str, top_k: int = 6) -> Dict[str, Any]:
     """RAG fetch: return text + minimal meta for the agent to reason over."""

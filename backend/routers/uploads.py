@@ -1,10 +1,10 @@
 # backend/routers/uploads.py
 from fastapi import APIRouter, HTTPException, Depends
 from typing import List, Dict, Any
-from backend.core.auth import bearer_auth
-from backend.services import uploads_index
-from backend.rag.store_chroma import get_collection
-from backend.services.storage import delete_local
+from core.auth import bearer_auth
+from services import uploads_index
+from rag.store_chroma import get_collection
+from services.storage import delete_local
 from pathlib import Path
 
 router = APIRouter(prefix="/uploads", tags=["uploads"])

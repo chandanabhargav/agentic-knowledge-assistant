@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.core.settings import settings
-from backend.routers.chat import router as chat_router
-from backend.routers.ingest import router as ingest_router
-from backend.routers.agent import router as agent_router
-from backend.routers.uploads import router as uploads_router
+from core.settings import settings
+from routers.chat import router as chat_router
+from routers.ingest import router as ingest_router
+from routers.agent import router as agent_router
+from routers.uploads import router as uploads_router
 
 app = FastAPI(title="RAG Agentic Assistant Demo")
 
