@@ -22,5 +22,6 @@ app.include_router(agent_router, prefix="/api")
 app.include_router(uploads_router, prefix="/api")
 
 @app.get("/health")
+@app.head("/health")
 def health():
     return {"ok": True}
